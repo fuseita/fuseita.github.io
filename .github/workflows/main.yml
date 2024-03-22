@@ -18,11 +18,11 @@ jobs:
       - name: 安裝 Node.js 套件 🔧
         run: npm install
 
-      - name: 建置 build 資料夾 🔨
+      - name: 建置 dist 資料夾 🔨
         run: npm run build
 
-      - name: 上傳 build 資料夾 🚀
+      - name: 上傳 dist 資料夾 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
-          folder: build
+          folder: dist
