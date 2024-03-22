@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { App, Col, Row, Typography } from 'antd';
 
-function App() {
-  const [count, setCount] = useState(0)
+const { Title, Paragraph, Text, Link } = Typography;
 
+const IntroPage = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Row justify="center">
+      <Col span={12}>
+        <Typography>
+          <Title>浮砂塔工作室 Fuseita Studio</Title>
+          <Paragraph>
+            走走<Text delete>絕不可能</Text>「舌燦蓮花」「坑殺拐賣顧客」的！
+          </Paragraph>
 
-export default App
+          <Title level={2}>誰是走走？</Title>
+          <Paragraph>
+            走走是我家老闆，他從不壓榨員工。我是不知道，反正這是他半夜打電話要我這樣寫的。
+          </Paragraph>
+
+          <Title level={2}>我們是誰？</Title>
+          <Paragraph>
+            我們是<Text delete>一群被壓榨的血汗勞工</Text>，這一切都是走走的陰謀！
+          </Paragraph>
+
+          <Title level={2}>成功案例</Title>
+          <Paragraph>
+            <ul>
+              <li>
+                <Link href="#">待續...</Link>
+              </li>
+            </ul>
+          </Paragraph>
+        </Typography>
+      </Col>
+    </Row>
+  );
+};
+
+const MyApp = () => (
+  <App>
+    <IntroPage />
+  </App>
+);
+
+export default MyApp;
