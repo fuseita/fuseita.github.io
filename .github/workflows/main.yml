@@ -20,17 +20,9 @@ jobs:
 
       - name: 建置 build 資料夾 🔨
         run: npm run build
-          
-      - name: 使用 Zip 📤
-        uses: montudor/action-zip@v1
 
-      - name: 製作 Zip 📥
-        working-directory: build
-        run: zip -qq -r ../build.zip .
-
-      - name: 上傳 Zip 🚀
-        uses: JantHsueh/upload-file-action@master
+      - name: 上傳 build 資料夾 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          url: ${{ vars.KIJYA_URL }}
-          forms: '{"password":"${{ secrets.KIJYA_PASS }}","path":"${{ vars.KIJYA_PATH }}"}'
-          fileForms: '{"file":"build.zip"}'
+          branch: gh-pages
+          folder: build
